@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+}
+/************ All pages ************/
+body {
+    background-color: #fdfbd2;
+    font-family: 'new-order', sans-serif;
+}
+
+main {
+    margin-top: 80px;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+h1 {
+    font-family: 'Retro star', sans-serif; 
+    font-size: 20px;
+    text-align: center;
+    color: #6f1f46;
+    margin-bottom: 10px;
+}
+
+p {
+    font-weight: 400;
+    font-size: 13px;
+    font-style: normal;
+    color: #6f1f46;
+    margin-bottom: 20px;
+}
+
+.progressbar {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+/************ Navigation ************/
+nav {
+    position: fixed;
+    top: 0;
+    border: 2px solid #6f1f46;
+    background-color: #f1c477;
+    border-radius: 0 0 20px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/************ Content donate ************/
+/* Heading */ 
+.donate {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #6f1f46;
+    text-align: left;
+}
+
+input[type=text], select, textarea {
+    font-family: 'new-order', sans-serif;
+    width: 100%;
+    padding: 12px; 
+    border: 2px solid #6f1f46;
+    background-color: #fdfbd2;
+    color: #6f1f46;
+    border-radius: 4px;
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin: 16px 0 16px 0;
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+
+.message { 
+    color:#6f1f46;
+}
+
+/* Style the submit button with a specific background color etc */
+  input[type=submit] {
+    background-color: #e1a946;
+    font-family: 'Retro star', sans-serif; 
+    color: #6f1f46;
+    padding: 0.5em 0;
+    width: 45%;
+    border: 2px solid #6f1f46;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+  
+/************ Content index ************/
+.clothing {
+    border: 2px solid #6f1f46;
+    border-radius: 4px;
+    background-color: #f1c477;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 80px;
+    margin: 6% 25% 0 25%;
+}
+
+.clothing:after {
+    background-color: #e1a946;
+}
+
+.clothing img {
+    width: 90px;
+}
+
+/************ Content choose ************/
+.info {
+    margin: 20px 0 20px 0;
+}
+
+.svg {
+    width: 80%;
+    margin: 0 10% 0 10%;
+}
+
+.headings {
+    font-family: 'Retro star', sans-serif; 
+    margin-top: 30px;
+    font-size: 22px;
+    color: #6f1f46;
+    text-align: left;
+}
+.backbutton {
+    margin: 10px 0;
+}
+/************ Content info ************/
+.speechbubble {
+    width: 100%;
+    height: 140px;
+    border: 2px solid #6f1f46;
+    background-color: #f1c477;
+    position: relative;
+}
+/* Paragraph */ 
+.speech {
+    margin: 10px 15px 0 15px;
+}
+.thick {
+    margin: 5px 15px 0 15px;
+    font-family: "new-order", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.earth {
+    width: 120px;
+    position: absolute;
+    margin: -10% 0 0 65%;
+}
+/************ Content outfit ************/
+.container3 {
+    display: flex;
+    justify-content: center;
+    margin: 10px 30px 0 0;
+}
+
+.speechbubble2 {
+    width: 100%;
+    height: 100px;
+    border: 2px solid #6f1f46;
+    background-color: #f1c477;
+}
+
+iframe {
+    margin: 30px 0 30px 0;
+    width: 375px;
+    height: 200px;
+}
+
+
+/************ Buttons ************/
+.button {
+    font-family: 'Retro star', sans-serif; 
+    padding: 0.6em 0;
+    border: 2px solid #6f1f46;
+    font-size: 15px;    
+    border-radius: 5px;
+    background-color: #e1a946;
+    width: 45%;
+    margin: 5% 27.5% 5% 27.5%;
+    text-align: center;
+}
+.button a, .button2 a {
+    text-decoration: none;
+    color: #6f1f46;
+}
+
+.button2 {
+    font-family: 'Retro star', sans-serif; 
+    padding: 0.6em 0;
+    border: 2px solid #6f1f46;
+    margin: 15px 0;
+    font-size: 15px;    
+    border-radius: 5px;
+    background-color: #f1c477;
+    width: 45%;
+    text-align: center;
+}
+
+/************ Footer ************/
+footer {
+    border: 1.5px solid #6f1f46;
+    border-radius: 20px 20px 0 0;
+    background-color: #f1c477;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hat {
+    border: 1.5px solid #6f1f46;
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
