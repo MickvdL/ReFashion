@@ -1,108 +1,61 @@
-const character = document.querySelector("#character")
-const kledingStuk = document.querySelector("#plaatje1")
-const trui = document.querySelector("#plaatje2")
-const paarseBroek = document.querySelector("#plaatje6")
-const geleSchoenen = document.querySelector("#plaatje10")
+const character = document.querySelector("#character");
 const titelElement = document.querySelector("#titelElement");
 
 let verderButton = document.getElementById("knop");
 let clickCounter = 0;
-
-function hoed(){
-    character.src = "images/aardenormaal.svg"
-    // Speel het geluid af wanneer plaatje 1 (hoed) wordt ingedrukt
+// Bron: ChatGPT //
+function changeCharacter(imageSrc) {
+    character.src = imageSrc;
     let audio = document.getElementById("clickSound");
     audio.play();
 }
 
-function trouser(){
-    character.src = "images/aardewhitetrouser.svg"
-      // Speel het geluid af wanneer plaatje 2 (hoed) wordt ingedrukt
-      let audio = document.getElementById("clickSound");
-      audio.play();
+function setupClickEvents() {
+    // wanneer er wordt geklikt op het element met het ID "plaatje1", de functie changeCharacter("images/aardenormaal.svg") wordt uitgevoerd. //
+    document.getElementById("plaatje1").addEventListener('click', () => changeCharacter("images/aardenormaal.svg"));
+    document.getElementById("plaatje2").addEventListener('click', () => changeCharacter("images/aardewhitetrouser.svg"));
+    document.getElementById("plaatje6").addEventListener('click', () => changeCharacter("images/aardelevel3.svg"));
+    document.getElementById("plaatje10").addEventListener('click', () => changeCharacter("images/aardelevel4.svg"));
 }
 
-function broek(){
-    character.src = "images/aardelevel3.svg"
-      // Speel het geluid af wanneer plaatje 6 (hoed) wordt ingedrukt
-      let audio = document.getElementById("clickSound");
-      audio.play();
+function toggleVisibility(elementsToShow, elementsToHide) {
+    // Bron: ChatGPT //
+    elementsToShow.forEach(id => {
+        let element = document.getElementById(id);
+        if (element) {
+            element.style.display = "block";
+        }
+    });
+    elementsToHide.forEach(id => {
+        let element = document.getElementById(id);
+        if (element) {
+            element.style.display = "none";
+        }
+    });
 }
 
-function schoenen(){
-    character.src = "images/aardelevel4.svg"
-    titelElement.textContent = "De outfit is af!";
-      // Speel het geluid af wanneer plaatje 10 (hoed) wordt ingedrukt
-      let audio = document.getElementById("clickSound");
-      audio.play();
-}
-// Code gebruikt van ChatGPT //
 function verbergEnToonPlaatjes() {
-    clickCounter++;
+    clickCounter = clickCounter + 1;
 
     if (clickCounter === 1) {
-        // Verberg de hoed
-        let eerstePlaatje = document.getElementById("plaatje1");
-        if (eerstePlaatje) {
-            eerstePlaatje.style.display = "none";
-        }
-
-        // Toon de eerste set van drie nieuwe plaatjes
-        let plaatjesToon = ["plaatje2", "plaatje3", "plaatje4"];
-        plaatjesToon.forEach(function(id) {
-            let plaatje = document.getElementById(id);
-            if (plaatje) {
-                plaatje.style.display = "block";
-            }
-        });
+        toggleVisibility(["plaatje2", "plaatje3", "plaatje4"], ["plaatje1"]);
     } else if (clickCounter === 2) {
-        // Verberg de vorige set van drie plaatjes
-        let vorigePlaatjes = ["plaatje2", "plaatje3", "plaatje4"];
-        vorigePlaatjes.forEach(function(id) {
-            let plaatje = document.getElementById(id);
-            if (plaatje) {
-                plaatje.style.display = "none";
-            }
-        });
-
-        // Toon de volgende set van drie plaatjes
-        let plaatjesToon = ["plaatje5", "plaatje6", "plaatje7"];
-        plaatjesToon.forEach(function(id) {
-            let plaatje = document.getElementById(id);
-            if (plaatje) {
-                plaatje.style.display = "block";
-            }
-        });
+        toggleVisibility(["plaatje5", "plaatje6", "plaatje7"], ["plaatje2", "plaatje3", "plaatje4"]);
     } else if (clickCounter === 3) {
-        // Verberg de vorige set van drie plaatjes
-        let vorigePlaatjes = ["plaatje5", "plaatje6", "plaatje7"];
-        vorigePlaatjes.forEach(function(id) {
-            let plaatje = document.getElementById(id);
-            if (plaatje) {
-                plaatje.style.display = "none";
-            }
-        });
-
-        // Toon de laatste set van drie plaatjes
-        let plaatjesToon = ["plaatje8", "plaatje9", "plaatje10"];
-        plaatjesToon.forEach(function(id) {
-            let plaatje = document.getElementById(id);
-            if (plaatje) {
-                plaatje.style.display = "block";
-            }
-        });
+        toggleVisibility(["plaatje8", "plaatje9", "plaatje10"], ["plaatje5", "plaatje6", "plaatje7"]);
+    } else if (clickCounter === 4) {
+        titelElement.textContent = "Jouw outfit is ready!";
+        verderButton.textContent = "Opnieuw";
+        toggleVisibility([], ["plaatje1", "plaatje2", "plaatje3", "plaatje4", "plaatje5", "plaatje6", "plaatje7", "plaatje8", "plaatje9", "plaatje10"]);
+    } else if (clickCounter === 5) {
+        character.src = "images/aardenormaalv1.svg";
+        titelElement.textContent = "Kleed jouw planeet! ";
+        verderButton.textContent = "Verder";
+        // clickCounter start weer opnieuw //
+        clickCounter = 0;
+        toggleVisibility(["plaatje1"], ["plaatje2", "plaatje3", "plaatje4", "plaatje5", "plaatje6", "plaatje7", "plaatje8", "plaatje9", "plaatje10"]);
     }
 }
 
-// Voeg een event listener toe aan de knop
+setupClickEvents();
 verderButton.addEventListener("click", verbergEnToonPlaatjes);
-kledingStuk.addEventListener('click', hoed)
-trui.addEventListener('click', trouser)
-paarseBroek.addEventListener('click', broek)
-geleSchoenen.addEventListener('click', schoenen)
-
-
-
-
-
-
